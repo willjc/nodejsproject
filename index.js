@@ -29,7 +29,7 @@ http.createServer(function(req,res){
                 if(error){
                     fs.readFile("html/404.html",function(error,data404){
                         res.writeHead(404,{"Content-Type":"text/html;charset='utf-8'"});
-                        res.write(data404).toString();
+                        res.write(data404);
                         res.end();
                     });
                   
