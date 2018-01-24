@@ -3,7 +3,7 @@ var http=require('http');
 var fs=require('fs');
 var path = require('path');
 var urlurl = require('url');
-var getmm=require('./node-modules/getmime');
+var getmm=require('getmime');
 
 http.createServer(function(req,res){
     //req中带的 请求的url的地址

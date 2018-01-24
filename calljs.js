@@ -1,6 +1,7 @@
 var fs= require('fs');
-var getmm = require('./node-modules/getmime');
-getmm(fs,'/img/fourth-portfolio-item.jpg',function(data){
+var getmm=require('getmime');
+//var getmm = require('./node-modules/getmime');
+getmm(fs,'.jpg',function(data){
     
     console.log(data);
 })
