@@ -9,8 +9,8 @@ http.createServer(function(req,res){
  if(routername=='login'){
      //ejs.renderFile是渲染模板文件，第一个参数是模板的目录 第二个参数是传入的数据，第三个是回调
      //函数，会返回渲染之后的页面，直接用res.end(data) 就可以看到
-     ejs.renderFile('views/login.ejs',function(error,data){
-
+     ejs.renderFile('views/login.ejs',{},function(error,data){
+            res.end(data);
      })
     res.end('this is login page');
  }else if(routername=='register'){
