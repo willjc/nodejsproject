@@ -4,7 +4,15 @@
         <title>welcome login page</title>
     </head>
     <body>
+            <form action="/dologin" method="GET"> 
+                username:<input type="text" name="name" value="" /><br>
+                password:<input type="password" name="password" value=""/><br>
+                <input type="submit" value="提交" >
+            </form>
+        <%=msg%>
         this is login page<br>
-        <%=%>
+        <% for (var i=0;i<arr.length;i++) { %>
+            <h2><%= arr[i] %></h2>
+          <% } %>
     </body>
 </html>
