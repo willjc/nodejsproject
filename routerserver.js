@@ -2,10 +2,11 @@ var http=require('http');
 var router= require('router');
 var urlurl=require('url');
 var ejs=require('ejs');
-console.log(ejs);
+//console.log(ejs);
 
 http.createServer(function(req,res){
  var routername =  urlurl.parse(req.url).pathname.replace('/','');
+ var method=req.method;
  res.writeHead(200,"Content-Type:text/html;chaset='utf-8'");
  if(routername=='login'){
     var arra=[111,222,333,444,999,555];
@@ -17,6 +18,18 @@ http.createServer(function(req,res){
     res.end('this is login page');
  }else if(routername=='register'){
     res.end('this is register page');
+ }else if(routername=='dologin' && method=='GET'){
+        console.log(urlurl.parse(req.url,true).query.name)
+ }else if(routername=='dologin' && method=='POST'){
+        var formdata='';    
+    req.on('data',function(chunk){
+            formdata+=chunk;
+        });
+    req.on('end',function(){
+       // req.query=formdata;
+        console.log(formdata);
+       console.log(req.url);
+    });
  }else{
      res.end('this is else page');
  }
